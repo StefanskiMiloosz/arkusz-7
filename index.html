@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ Semantyczny - Jeden Plik</title>
+    
+    <!-- Tutaj zaczyna się cały kod CSS dla układu -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Podstawowy styl dla wszystkich bloków */
+        .block {
+            padding: 15px;
+            margin: 5px; /* Dodaje odstępy między blokami */
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            text-align: center;
+            box-sizing: border-box; /* Zapewnia, że padding i border nie zwiększają szerokości */
+        }
+
+        /* Styl dla wizualnego napisu "Blok główny" */
+        .main-title {
+            margin: 5px;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+
+        /* Kontener główny MAIN używający Flexbox do ułożenia kolumn */
+        .main-content-area {
+            display: flex;
+            justify-content: space-between; /* Rozkłada elementy równomiernie */
+            border: none; /* Główny kontener nie potrzebuje ramki */
+            padding: 0;
+            background-color: transparent;
+        }
+
+        .sidebar {
+            flex: 1; /* Blok boczny zajmuje 1 część szerokości */
+            min-height: 200px; /* Minimalna wysokość, aby blok był widoczny */
+        }
+
+        .section-content {
+            flex: 2; /* Sekcja zajmuje 2 części szerokości */
+            min-height: 200px;
+        }
+    </style>
+    <!-- Tutaj kończy się kod CSS -->
+</head>
+<body>
+
+    <nav class="block">
+        Blok nawigacyjny (NAV)
+    </nav>
+
+    <div class="main-page-wrapper">
+
+        <!-- Wizualny napis "Blok główny" -->
+        <div class="main-title">Blok główny</div>
+
+        <main class="block main-content-area">
+            
+            <aside class="block sidebar">
+                Blok boczny (ASIDE)
+            </aside>
+            
+            <section class="block section-content">
+                Sekcja (SECTION)
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="block">
+        Blok stopki (FOOTER)
+    </footer>
+
+</body>
+</html>
